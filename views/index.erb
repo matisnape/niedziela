@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/default.css" type="text/css">
-    <title>Czy dzisiaj jest niedziela handlowa?</title>
+    <link rel="stylesheet" href="/niedziela.css" type="text/css">
+    <title>Czy dzisiaj sklepy są otwarte?</title>
   </head>
   <body>
     <div class="container">
       <div id="header">
-        <p>Czy Niedziela</p>
+        <p>Czy dzisiaj sklepy są otwarte?</p>
       </div>
       <div>
-        Blabla
+        <%= @checkdate.are_shops_closed_today? %>
       </div>
+      <% if not @checkdate.current_date.sunday? %>
+      <div>
+        W najbliższą niedzielę <%= @checkdate.next_sunday_formatted %> sklepy będą: <%= @checkdate.next_sunday_closed? %>
+      </div>
+      <% end %>
       <div id="footer" class="span-24">
         <p>Lista świąt i niedziel niehandlowych pobrana <a href='https://pl.wikipedia.org/wiki/Zakaz_handlu_w_niedziele_i_%C5%9Bwi%C4%99ta' target='_blank' >stąd</a>.</p>
         <p>anks.pl</p>
