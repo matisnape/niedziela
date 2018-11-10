@@ -10,14 +10,24 @@
       <div id="header">
         <p>Dzisiaj sklepy są:</p>
       </div>
-      <div class='status'>
-        <p><%= @checkdate.are_shops_closed_today? %></p>
-      </div>
+      <% if @checkdate.are_shops_closed_today? == true %>
+        <div class='status closed'>
+          <p>Zamknięte</p>
+        </div>
+      <% else %>
+        <div class='status open'>
+          <p>Otwarte</p>
+        </div>
+      <% end %>
       <% if not @checkdate.current_date.sunday? %>
-      <div class='next'>
-        <p>W najbliższą niedzielę <%= @checkdate.next_sunday_formatted %> sklepy będą: </p>
-        <p><%= @checkdate.next_sunday_closed? %></p>
-      </div>
+        <div class='next'>
+          <p>W najbliższą niedzielę <%= @checkdate.next_sunday_formatted %> sklepy będą: </p>
+          <% if @checkdate.next_sunday_closed? %>
+            <p class='red'>Zamknięte</p>
+          <% else %>
+            <p class='green'>Otwarte</p>
+          <% end %>
+        </div>
       <% end %>
       <div id="footer">
         <p>Lista świąt i niedziel niehandlowych pobrana <a href='https://pl.wikipedia.org/wiki/Zakaz_handlu_w_niedziele_i_%C5%9Bwi%C4%99ta' target='_blank' >stąd</a>.</p>

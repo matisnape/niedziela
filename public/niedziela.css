@@ -24,11 +24,11 @@ body {
   justify-content: center;
   width: 210px;
   height: 80px;
-  background-color: pink;
   font-size: 40px;
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 
 .next {
@@ -52,6 +52,21 @@ body {
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+.open {
+  background-color: green;
+}
+
+.closed {
+  background-color: red;
 }
 
 
