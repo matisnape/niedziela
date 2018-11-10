@@ -3,7 +3,7 @@ ruby '2.5.1'
 
 gem 'sinatra', '>= 2.0.1'
 
-group :development do
+group :development, :test do
   gem 'rerun'
   gem 'pry'
   gem 'rspec'

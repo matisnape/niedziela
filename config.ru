@@ -1,3 +1,4 @@
-require 'date'
+require 'pry'
+
 require './app'
 run App
