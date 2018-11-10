@@ -1,2 +1,3 @@
+require 'date'
 require './app'
-run MyApp
+run App
