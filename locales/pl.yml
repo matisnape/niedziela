@@ -6,7 +6,7 @@ pl:
   app:
     question: "Czy dzisiaj sklepy są otwarte?"
     shops: "Sklepy dzisiaj są:"
-    holiday: "(Bo jest święto)"
+    info: "(Bo jest %{reason})"
     next_sunday: "W najbliższą niedzielę %{sunday}, sklepy będą:"
     open: Otwarte
     closed: Zamknięte

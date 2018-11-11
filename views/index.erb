@@ -18,6 +18,7 @@
         <div class='status closed'>
           <p><%= I18n.t('app.closed') %></p>
         </div>
+        <p><%= I18n.t('app.info', reason: @today.reason) %></p>
       <% else %>
         <div class='status open'>
           <p><%= I18n.t('app.open') %></p>

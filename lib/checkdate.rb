@@ -6,14 +6,22 @@ class CheckDate
 
   attr_reader :date
   attr_reader :full_date
+  attr_accessor :reason
 
   def initialize
     @date = Time.now.to_date
     @full_date = I18n.l(Time.now.to_date, format: '%A, %d. %B')
+    @reason = ''
   end
 
   def are_shops_closed_today?
-    return true if nonshop_sunday? || perm_holiday?
+    if perm_holiday?
+      @reason = 'święto'
+      return true
+    elsif nonshop_sunday?
+      @reason = 'niedziela'
+      return true
+    end
     return false
   end
 

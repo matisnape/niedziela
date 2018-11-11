@@ -21,7 +21,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 210px;
   height: 80px;
   font-size: 40px;
   margin-top: 10px;
@@ -49,6 +48,9 @@ body {
 
 #footer > p, .next > p, #header > p {
   margin-top: 0;
+}
+
+p {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -63,10 +65,12 @@ body {
 
 .open {
   background-color: green;
+  width: 210px;
 }
 
 .closed {
   background-color: red;
+  width: 250px;
 }
 
 
