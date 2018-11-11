@@ -5,11 +5,11 @@ class CheckDate
   include ClosedDays
 
   attr_reader :date
-  attr_reader :weekday
+  attr_reader :full_date
 
   def initialize
     @date = Time.now.to_date
-    @weekday = I18n.l(Time.now.to_date, format: '%A')
+    @full_date = I18n.l(Time.now.to_date, format: '%A, %d. %B')
   end
 
   def are_shops_closed_today?

@@ -1,3 +1,12 @@
 pl:
   date:
     day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
+    month_names: [Grudnia, Stycznia, Lutego, Marca, Kwietnia, Maja, Czerwca, Lipca, Sierpnia,
+      Września, Października, Listopada]
+  app:
+    question: "Czy dzisiaj sklepy są otwarte?"
+    shops: "Sklepy dzisiaj są:"
+    holiday: "(Bo jest święto)"
+    next_sunday: "W najbliższą niedzielę %{sunday}, sklepy będą:"
+    open: Otwarte
+    closed: Zamknięte

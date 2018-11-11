@@ -6,29 +6,30 @@
     <meta property="og:title" content="Czy dzisiaj sklepy są otwarte?">
     <meta name="description" content="Sprawdź, czy dzisiaj zrobisz zakupy. Obsługuję takze święta.">
     <meta property="og:description" content="Sprawdź, czy dzisiaj zrobisz zakupy. Obsługuję takze święta.">
-    <title>Czy dzisiaj sklepy są otwarte?</title>
+    <title><%= I18n.t('app.question') %></title>
   </head>
   <body>
     <div class="container">
       <div id="header">
-        <p>Dzisiaj sklepy są:</p>
+        <p><%= @today.full_date %></p>
+        <p><%= I18n.t('app.shops') %></p>
       </div>
       <% if @today.are_shops_closed_today? == true %>
         <div class='status closed'>
-          <p>Zamknięte</p>
+          <p><%= I18n.t('app.closed') %></p>
         </div>
       <% else %>
         <div class='status open'>
-          <p>Otwarte</p>
+          <p><%= I18n.t('app.open') %></p>
         </div>
       <% end %>
       <% if not @today.date.sunday? %>
         <div class='next'>
-          <p>W najbliższą niedzielę <%= @today.next_sunday_formatted %> sklepy będą: </p>
+          <p><%= I18n.t('app.open', date: @today.next_sunday_formatted) %></p>
           <% if @today.next_sunday_closed? %>
-            <p class='red'>Zamknięte</p>
+            <p class='red'><%= I18n.t('app.closed') %></p>
           <% else %>
-            <p class='green'>Otwarte</p>
+            <p class='green'><%= I18n.t('app.open') %></p>
           <% end %>
         </div>
       <% end %>
