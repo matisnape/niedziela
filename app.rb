@@ -10,6 +10,6 @@ class App < Sinatra::Base
   get '/holidays' do
     content_type 'application/json'
     @api ||= ClosedDays::CalendarIndexAPI.new()
-    @api.get_holidays
+    @api.holidays
   end
 end

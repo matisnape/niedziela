@@ -15,9 +15,18 @@ module ClosedDays
       }
     end
 
-    def get_holidays
+    def holidays
       response = self.class.get("/holidays", query: @options)
       response["response"]["holidays"].to_json
+    end
+
+    def holiday_dates
+      holiday_hash = JSON.parse(holidays)
+      arr = []
+      holiday_hash.each do |item|
+        arr << Date.parse(item["date"]).to_s
+      end
+      arr
     end
   end
 end
