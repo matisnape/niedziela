@@ -27,7 +27,7 @@
       <% end %>
       <% if not @today.date.sunday? %>
         <div class='next'>
-          <p><%= I18n.t('app.open', date: @today.next_sunday_formatted) %></p>
+          <p><%= I18n.t('app.next_sunday', sunday: @today.next_sunday_formatted) %></p>
           <% if @today.next_sunday_closed? %>
             <p class='red'><%= I18n.t('app.closed') %></p>
           <% else %>
