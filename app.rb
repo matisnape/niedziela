@@ -1,5 +1,3 @@
-require 'sinatra'
-require 'i18n'
 require './lib/holiday_api.rb'
 require './lib/checkdate.rb'
 
