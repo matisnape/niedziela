@@ -7,5 +7,7 @@ gem 'i18n'
 group :development, :test do
   gem 'rerun'
   gem 'pry'
-  gem 'rspec'
+  gem 'minitest'
+  gem 'rack-test'
+  gem 'rake'
 end
