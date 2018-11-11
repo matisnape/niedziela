@@ -11,7 +11,6 @@ class CheckDate
   def initialize
     @date = Time.now.to_date
     @full_date = I18n.l(Time.now.to_date, format: '%A, %d. %B')
-    @reason = ''
   end
 
   def are_shops_closed_today?
