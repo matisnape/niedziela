@@ -7,20 +7,21 @@ module ClosedDays
     ]
   end
 
-  def perm_holidays
+  def additional_holidays
     [
-      '01-01',
-      '01-06',
-      '05-01',
-      '05-03',
-      '08-15',
-      '11-01',
-      '11-11',
-      '11-12',
-      '12-25',
-      '12-26'
+      '11-12'
     ].map do |mmdd|
       Time.now.year.to_s + '-' + mmdd
     end
+  end
+
+  def holidays
+    @api ||= CalendarIndexAPI.new()
+    @api.holiday_dates
+  end
+
+  def holidays_combined
+    total = additional_holidays + holidays
+    total.uniq.sort
   end
 end

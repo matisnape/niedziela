@@ -14,7 +14,7 @@ class CheckDate
   end
 
   def are_shops_closed_today?
-    if perm_holiday?
+    if holiday?
       @reason = 'święto'
       return true
     elsif nonshop_sunday?
@@ -33,7 +33,7 @@ class CheckDate
   end
 
   def next_sunday_closed?
-    return true if nonshop_sunday?(next_sunday.to_s) || perm_holiday?(next_sunday.to_s)
+    return true if nonshop_sunday?(next_sunday.to_s) || holiday?(next_sunday.to_s)
     return false
   end
 
@@ -45,7 +45,7 @@ class CheckDate
     nonshop_sundays.include?(date)
   end
 
-  def perm_holiday?(date =  date_as_string)
-    perm_holidays.include?(date)
+  def holiday?(date =  date_as_string)
+    holidays_combined.include?(date)
   end
 end
