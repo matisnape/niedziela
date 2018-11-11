@@ -1,13 +1,13 @@
 body {
-  font-family: 'Fira Sans', sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #header {
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -65,10 +65,10 @@ p {
 
 .open {
   background-color: green;
-  width: 210px;
+  width: 225px;
 }
 
 .closed {
   background-color: red;
-  width: 250px;
+  width: 280px;
 }
