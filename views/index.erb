@@ -13,7 +13,7 @@
       <div id="header">
         <p>Dzisiaj sklepy są:</p>
       </div>
-      <% if @checkdate.are_shops_closed_today? == true %>
+      <% if @today.are_shops_closed_today? == true %>
         <div class='status closed'>
           <p>Zamknięte</p>
         </div>
@@ -22,10 +22,10 @@
           <p>Otwarte</p>
         </div>
       <% end %>
-      <% if not @checkdate.current_date.sunday? %>
+      <% if not @today.date.sunday? %>
         <div class='next'>
-          <p>W najbliższą niedzielę <%= @checkdate.next_sunday_formatted %> sklepy będą: </p>
-          <% if @checkdate.next_sunday_closed? %>
+          <p>W najbliższą niedzielę <%= @today.next_sunday_formatted %> sklepy będą: </p>
+          <% if @today.next_sunday_closed? %>
             <p class='red'>Zamknięte</p>
           <% else %>
             <p class='green'>Otwarte</p>

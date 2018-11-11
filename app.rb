@@ -4,7 +4,7 @@ require './lib/checkdate.rb'
 
 class App < Sinatra::Base
   get '/' do
-    @checkdate = CheckDate.new
+    @today = CheckDate.new
     erb :index
   end
 end

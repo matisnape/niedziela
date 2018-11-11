@@ -4,10 +4,12 @@ require_relative './closed_days.rb'
 class CheckDate
   include ClosedDays
 
-  attr_reader :current_date
+  attr_reader :date
+  attr_reader :weekday
 
   def initialize
-    @current_date = Time.now.to_date
+    @date = Time.now.to_date
+    @weekday = I18n.l(Time.now.to_date, format: '%A')
   end
 
   def are_shops_closed_today?
@@ -16,7 +18,7 @@ class CheckDate
   end
 
   def next_sunday
-    @current_date - @current_date.wday + 7
+    @date - @date.wday + 7
   end
 
   def next_sunday_formatted
@@ -28,15 +30,15 @@ class CheckDate
     return false
   end
 
-  def current_date_as_string
-    @current_date.to_s
+  def date_as_string
+    @date.to_s
   end
 
-  def nonshop_sunday?(date =  current_date_as_string)
+  def nonshop_sunday?(date =  date_as_string)
     nonshop_sundays.include?(date)
   end
 
-  def perm_holiday?(date =  current_date_as_string)
+  def perm_holiday?(date =  date_as_string)
     perm_holidays.include?(date)
   end
 end
