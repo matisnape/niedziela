@@ -1,0 +1,72 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 80px;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.next {
+  font-size: 20px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer {
+  position: relative;
+  font-size: 15px;
+  height: 84px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+}
+
+#footer > p, .next > p {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+.open {
+  background-color: green;
+}
+
+.closed {
+  background-color: red;
+}
+
+

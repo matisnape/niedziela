@@ -11,8 +11,8 @@ class CheckDate
   end
 
   def are_shops_closed_today?
-    return "Zamknięte" if nonshop_sunday? || perm_holiday?
-    return "Otwarte"
+    return true if nonshop_sunday? || perm_holiday?
+    return false
   end
 
   def next_sunday
@@ -24,8 +24,8 @@ class CheckDate
   end
 
   def next_sunday_closed?
-    return "Zamknięte" if nonshop_sunday?(next_sunday.to_s) || perm_holiday?(next_sunday.to_s)
-    return "Otwarte"
+    return true if nonshop_sunday?(next_sunday.to_s) || perm_holiday?(next_sunday.to_s)
+    return false
   end
 
   def current_date_as_string

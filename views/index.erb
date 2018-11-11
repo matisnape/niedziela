@@ -2,24 +2,39 @@
 <html>
   <head>
     <link rel="stylesheet" href="/niedziela.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <meta property="og:title" content="Czy dzisiaj sklepy są otwarte?">
+    <meta name="description" content="Sprawdź, czy dzisiaj zrobisz zakupy. Obsługuję takze święta.">
+    <meta property="og:description" content="Sprawdź, czy dzisiaj zrobisz zakupy. Obsługuję takze święta.">
     <title>Czy dzisiaj sklepy są otwarte?</title>
   </head>
   <body>
     <div class="container">
       <div id="header">
-        <p>Czy dzisiaj sklepy są otwarte?</p>
+        <p>Dzisiaj sklepy są:</p>
       </div>
-      <div>
-        <%= @checkdate.are_shops_closed_today? %>
-      </div>
-      <% if not @checkdate.current_date.sunday? %>
-      <div>
-        W najbliższą niedzielę <%= @checkdate.next_sunday_formatted %> sklepy będą: <%= @checkdate.next_sunday_closed? %>
-      </div>
+      <% if @checkdate.are_shops_closed_today? == true %>
+        <div class='status closed'>
+          <p>Zamknięte</p>
+        </div>
+      <% else %>
+        <div class='status open'>
+          <p>Otwarte</p>
+        </div>
       <% end %>
-      <div id="footer" class="span-24">
+      <% if not @checkdate.current_date.sunday? %>
+        <div class='next'>
+          <p>W najbliższą niedzielę <%= @checkdate.next_sunday_formatted %> sklepy będą: </p>
+          <% if @checkdate.next_sunday_closed? %>
+            <p class='red'>Zamknięte</p>
+          <% else %>
+            <p class='green'>Otwarte</p>
+          <% end %>
+        </div>
+      <% end %>
+      <div id="footer">
         <p>Lista świąt i niedziel niehandlowych pobrana <a href='https://pl.wikipedia.org/wiki/Zakaz_handlu_w_niedziele_i_%C5%9Bwi%C4%99ta' target='_blank' >stąd</a>.</p>
-        <p>anks.pl</p>
+        <p><a href='https://anks.pl'>anks.pl</a></p>
       </div>
     </div>
   </body>
