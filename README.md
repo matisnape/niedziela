@@ -13,4 +13,4 @@ bundle exec rackup
 - obliczanie niehandlowych niedziel (wolne to pierwsza i ostatnia w miesiącu)
 - tablice z wolnymi dniami powinny być typu Date, żeby pozbyć się castowania do stringów w klasie CheckDate
 - ~~style RWD~~
-- zrobić porządek z secretsami
+- ~~zrobić porządek z secretsami~~
