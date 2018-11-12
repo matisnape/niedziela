@@ -33,8 +33,7 @@ class CheckDate
   end
 
   def next_sunday_closed?
-    return true if nonshop_sunday?(next_sunday.to_s) || holiday?(next_sunday.to_s)
-    return false
+    nonshop_sunday?(next_sunday.to_s) || holiday?(next_sunday.to_s)
   end
 
   def date_as_string
