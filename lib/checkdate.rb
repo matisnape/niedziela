@@ -15,10 +15,10 @@ class CheckDate
 
   def are_shops_closed_today?
     if holiday?
-      @reason = 'święto'
+      @reason = I18n.t('app.reason.holiday')
       return true
     elsif nonshop_sunday?
-      @reason = 'niedziela'
+      @reason = I18n.t('app.reason.niehandlowa')
       return true
     end
     return false

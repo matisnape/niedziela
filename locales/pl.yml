@@ -10,3 +10,6 @@ pl:
     next_sunday: "W najbliższą niedzielę %{sunday}, sklepy będą:"
     open: Otwarte
     closed: Zamknięte
+    reason:
+      holiday: święto
+      niehandlowa: niedziela niehandlowa
