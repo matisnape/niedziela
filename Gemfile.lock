@@ -19,7 +19,7 @@ GEM
     pry (0.12.0)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-protection (2.0.4)
       rack
     rack-test (1.1.0)
@@ -46,6 +46,7 @@ DEPENDENCIES
   i18n
   minitest
   pry
+  rack (>= 2.0.6)
   rack-test
   rake
   rerun
@@ -55,4 +56,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.4
+   1.16.5

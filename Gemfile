@@ -5,6 +5,7 @@ gem 'sinatra', '>= 2.0.1'
 gem 'i18n'
 gem 'httparty'
 gem 'pry'
+gem 'rack', '>= 2.0.6'
 
 group :development, :test do
   gem 'rerun'
