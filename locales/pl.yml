@@ -1,8 +1,8 @@
 pl:
   date:
     day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
-    month_names: [Grudnia, Stycznia, Lutego, Marca, Kwietnia, Maja, Czerwca, Lipca, Sierpnia,
-      Września, Października, Listopada]
+    month_names: ['', Stycznia, Lutego, Marca, Kwietnia, Maja, Czerwca, Lipca, Sierpnia,
+      Września, Października, Listopada, Grudnia]
   app:
     question: "Czy dzisiaj sklepy są otwarte?"
     shops: "Sklepy dzisiaj są:"
