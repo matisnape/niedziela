@@ -16,8 +16,8 @@ module ClosedDays
     end
 
     def holidays
-      response = self.class.get("/holidays", query: @options)
-      response["response"]["holidays"].to_json
+      response = self.class.get('/holidays', query: @options)
+      response['response']['holidays'].to_json
     end
 
     def holiday_dates

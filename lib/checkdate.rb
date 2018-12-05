@@ -21,7 +21,7 @@ class CheckDate
       @reason = I18n.t('app.reason.niehandlowa')
       return true
     end
-    return false
+    false
   end
 
   def next_sunday
