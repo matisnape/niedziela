@@ -22,11 +22,9 @@ module ClosedDays
 
     def holiday_dates
       holiday_hash = JSON.parse(holidays)
-      arr = []
-      holiday_hash.each do |item|
-        arr << Date.parse(item["date"]).to_s
+      holiday_hash.each_with_object([]) do |item, arr|
+        arr << Date.parse(item['date']).to_s
       end
-      arr
     end
   end
 end
