@@ -6,6 +6,7 @@ Appka odpowiadająca na pytanie, czy dzisiaj sklepy są otwarte?
 bundle
 bundle exec rackup
 ```
+Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (ustawione PL, żeby pokazywać zawsze wg czasu polskiego)
 
 ## TODO
 - testy z Timecopem
