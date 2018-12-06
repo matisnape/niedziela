@@ -19,9 +19,9 @@ module ClosedDays
 
   def additional_holidays
     [
-      '11-12'
-    ].map do |mmdd|
-      Time.now.year.to_s + '-' + mmdd
+      '2018-11-12'
+    ].map do |item|
+      Date.parse(item)
     end
   end
 
