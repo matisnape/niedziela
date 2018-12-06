@@ -1,10 +1,20 @@
 module ClosedDays
-  def nonshop_sundays
+  def shop_sundays(date)
     [
-      '2018-11-11',
-      '2018-11-18',
-      '2018-12-09'
+      first_sunday_of_month(date),
+      last_sunday_of_month(date),
+      first_sunday_of_month(date.next_month)
     ]
+  end
+
+  def first_sunday_of_month(date)
+    first_day_of_month = Date.new(date.year, date.month, 1)
+    first_day_of_month - first_day_of_month.wday + 7
+  end
+
+  def last_sunday_of_month(date)
+    last_day_of_month = Date.new(date.year, date.month, -1)
+    last_day_of_month - last_day_of_month.wday
   end
 
   def additional_holidays

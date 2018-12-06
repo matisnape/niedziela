@@ -40,8 +40,8 @@ class CheckDate
     @date.to_s
   end
 
-  def nonshop_sunday?(date =  date_as_string)
-    nonshop_sundays.include?(date)
+  def nonshop_sunday?(date = @date)
+    date.wday == 0 && !shop_sundays(@date).include?(date)
   end
 
   def holiday?(date =  date_as_string)
