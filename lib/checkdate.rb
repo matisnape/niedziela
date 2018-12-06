@@ -36,10 +36,6 @@ class CheckDate
     holiday?(next_sunday) || nonshop_sunday?(next_sunday) || holiday?(next_sunday)
   end
 
-  def date_as_string
-    @date.to_s
-  end
-
   def nonshop_sunday?(date = @date)
     date.wday == 0 && !shop_sundays(@date).include?(date)
   end
