@@ -4,7 +4,7 @@ module ClosedDays
       first_sunday_of_month(date),
       last_sunday_of_month(date),
       first_sunday_of_month(date.next_month)
-    ]
+    ] + additional_shop_sundays
   end
 
   def first_sunday_of_month(date)
@@ -15,6 +15,15 @@ module ClosedDays
   def last_sunday_of_month(date)
     last_day_of_month = Date.new(date.year, date.month, -1)
     last_day_of_month - last_day_of_month.wday
+  end
+
+  def additional_shop_sundays
+    [
+      '2018-12-16',
+      '2018-12-23'
+    ].map do |item|
+      Date.parse(item)
+    end
   end
 
   def additional_holidays
