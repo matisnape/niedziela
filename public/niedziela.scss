@@ -27,6 +27,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   color: white;
+
+  .open {
+    background-color: green;
+    width: 225px;
+  }
+
+  .closed {
+    background-color: red;
+    width: 280px;
+  }
 }
 
 .next {
@@ -34,6 +44,13 @@ body {
   margin-top: 60px;
   display: flex;
   flex-direction: column;
+
+  .closed {
+    color: red;
+  }
+  .open {
+    color: green;
+  }
 }
 
 #footer {
@@ -56,19 +73,4 @@ p {
   text-align: center;
 }
 
-.red {
-  color: red;
-}
-.green {
-  color: green;
-}
 
-.open {
-  background-color: green;
-  width: 225px;
-}
-
-.closed {
-  background-color: red;
-  width: 280px;
-}

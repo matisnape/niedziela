@@ -29,6 +29,11 @@ class CheckDate
   def next_sunday_formatted
     I18n.l(next_sunday, format: :day_month)
   end
+
+  def next_sunday_status
+    if holiday?(next_sunday) || nonshop_sunday?(next_sunday)
+      :closed
+    :open
   end
 
   def next_sunday_closed?
