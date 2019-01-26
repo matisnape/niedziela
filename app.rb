@@ -3,7 +3,7 @@ require './lib/checkdate.rb'
 
 class App < Sinatra::Base
   get '/' do
-    @today = CheckDate.new
+    @checker = CheckDate.new
     erb :index
   end
 

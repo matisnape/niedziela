@@ -12,20 +12,20 @@
   <body>
     <div class="container">
       <div id="header">
-        <p><%= @today.full_date %></p>
+        <p><%= @checker.full_date %></p>
         <p><%= I18n.t('app.shops') %></p>
       </div>
-      <% if @today.are_shops_closed_today? == true %>
+      <% if @checker.are_shops_closed_today? == true %>
         <div class='status closed'>
           <p><%= I18n.t('app.closed') %></p>
         </div>
-        <p><%= I18n.t('app.info', reason: @today.reason) %></p>
+        <p><%= I18n.t('app.info', reason: @checker.reason) %></p>
       <% else %>
         <div class='status open'>
           <p><%= I18n.t('app.open') %></p>
         </div>
       <% end %>
-      <% if not @today.date.sunday? %>
+      <% if not @checker.today.sunday? %>
         <div class='next'>
           <p><%= I18n.t('app.next_sunday', sunday: @today.next_sunday_formatted) %></p>
           <% if @today.next_sunday_closed? %>
