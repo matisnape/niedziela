@@ -4,25 +4,22 @@ require_relative './closed_days.rb'
 class CheckDate
   include ClosedDays
 
-  attr_accessor :reason
   def today
     Time.now.to_date
   end
+
   def full_date
     I18n.l(today)
   end
 
+  def reason
+    return I18n.t('app.reason.holiday') if holiday?
+    return I18n.t('app.reason.niehandlowa') if nonshop_sunday?
+    :reason_not_set
   end
 
   def are_shops_closed_today?
-    if holiday?
-      @reason = I18n.t('app.reason.holiday')
-      return true
-    elsif nonshop_sunday?
-      @reason = I18n.t('app.reason.niehandlowa')
-      return true
-    end
-    false
+    holiday? || nonshop_sunday?
   end
 
   def next_sunday
