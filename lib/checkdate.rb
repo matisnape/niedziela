@@ -33,6 +33,7 @@ class CheckDate
   def next_sunday_status
     if holiday?(next_sunday) || nonshop_sunday?(next_sunday)
       :closed
+    end
     :open
   end
 
