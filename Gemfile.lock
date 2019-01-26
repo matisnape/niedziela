@@ -31,6 +31,9 @@ GEM
     rerun (0.13.0)
       listen (~> 3.0)
     ruby_dep (1.5.0)
+    sassc (2.0.0)
+      ffi (~> 1.9.6)
+      rake
     sinatra (2.0.4)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -51,6 +54,7 @@ DEPENDENCIES
   rack-test
   rake
   rerun
+  sassc
   sinatra (>= 2.0.1)
   timecop
 

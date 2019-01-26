@@ -28,12 +28,12 @@ body {
   margin-right: auto;
   color: white;
 
-  .open {
+  &.open {
     background-color: green;
     width: 225px;
   }
 
-  .closed {
+  &.closed {
     background-color: red;
     width: 280px;
   }
