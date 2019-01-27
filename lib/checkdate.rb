@@ -4,26 +4,20 @@ require_relative './closed_days.rb'
 class CheckDate
   include ClosedDays
 
-  def today
-    Time.now.to_date
+  attr_reader :input_date
+
+  def initialize(input_date = today)
+    @input_date = input_date
   end
 
   def full_date
-    I18n.l(today)
+    I18n.l(input_date)
   end
 
   def reason
     return I18n.t('app.reason.holiday') if holiday?
     return I18n.t('app.reason.niehandlowa') if nonshop_sunday?
-    :reason_not_set
-  end
-
-  def are_shops_closed_today?
-    holiday? || nonshop_sunday?
-  end
-
-  def next_sunday
-    today - today.wday + 7
+    nil
   end
 
   def next_sunday_formatted
@@ -31,23 +25,35 @@ class CheckDate
   end
 
   def next_sunday_status
-    if holiday?(next_sunday) || nonshop_sunday?(next_sunday)
-      :closed
-    end
-    :open
+    day_status(next_sunday)
   end
 
-  def next_sunday_closed?
-    holiday?(next_sunday) || nonshop_sunday?(next_sunday)
+  def today_status
+    day_status(input_date)
   end
 
   private
 
-  def nonshop_sunday?(date = today)
-    date.wday == 0 && !shop_sundays(today).include?(date)
+  def today
+    Time.now.to_date
   end
 
-  def holiday?(date =  today)
+  def next_sunday
+    input_date - input_date.wday + 7
+  end
+
+  def nonshop_sunday?(date = input_date)
+    date.wday == 0 && !shop_sundays(input_date).include?(date)
+  end
+
+  def holiday?(date =  input_date)
     holidays_combined.include?(date)
+  end
+
+  def day_status(date)
+    if holiday?(date) || nonshop_sunday?(date)
+      return :closed
+    end
+    :open
   end
 end

@@ -15,17 +15,13 @@
         <p><%= @checker.full_date %></p>
         <p><%= I18n.t('app.shops') %></p>
       </div>
-      <% if @checker.are_shops_closed_today? == true %>
-        <div class='status closed'>
-          <p><%= I18n.t('app.closed') %></p>
-        </div>
+      <div class="status <%= @checker.today_status %>">
+        <p><%= I18n.t("app.#{@checker.today_status}") %></p>
+      </div>
+      <% if @checker.reason %>
         <p><%= I18n.t('app.info', reason: @checker.reason) %></p>
-      <% else %>
-        <div class='status open'>
-          <p><%= I18n.t('app.open') %></p>
-        </div>
       <% end %>
-      <% if not @checker.today.sunday? %>
+      <% if not @checker.input_date.sunday? %>
         <div class='next'>
           <p><%= I18n.t('app.next_sunday', sunday: @checker.next_sunday_formatted) %></p>
           <p class="<%= @checker.next_sunday_status %>"><%= I18n.t("app.#{@checker.next_sunday_status}") %></p>
