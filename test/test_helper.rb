@@ -7,15 +7,11 @@ require 'pry'
 require 'timecop'
 require 'sinatra'
 require_relative '../app.rb'
-require_relative './test_niedziela.rb'
 
 include Rack::Test::Methods
 
 I18n.load_path += Dir[File.join(File.dirname(__FILE__), '../locales', '*.yml').to_s]
 I18n.config.available_locales = :pl
-
-t = Time.local(2019, 1, 1, 10, 00, 0)
-Timecop.travel(t)
 
 def app
   Sinatra::Application

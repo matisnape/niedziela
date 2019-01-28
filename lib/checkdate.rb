@@ -43,7 +43,7 @@ class CheckDate
   end
 
   def nonshop_sunday?(date = input_date)
-    date.wday == 0 && !shop_sundays(input_date).include?(date)
+    date.wday == 0 && !shop_sundays(date).include?(date)
   end
 
   def holiday?(date =  input_date)
