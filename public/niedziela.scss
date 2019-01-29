@@ -45,10 +45,10 @@ body {
   display: flex;
   flex-direction: column;
 
-  .closed {
+  > .closed {
     color: red;
   }
-  .open {
+  > .open {
     color: green;
   }
 }
