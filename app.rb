@@ -2,6 +2,10 @@ require './lib/holiday_api.rb'
 require './lib/checkdate.rb'
 
 class App < Sinatra::Base
+  error do
+    erb :error
+  end
+
   get '/' do
     @checker = CheckDate.new
     erb :index

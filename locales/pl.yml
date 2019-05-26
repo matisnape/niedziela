@@ -16,3 +16,7 @@ pl:
     reason:
       holiday: święto
       niehandlowa: niedziela niehandlowa
+    error:
+      header: Coś poszło nie tak
+      text: Napisz mi o tym <a href=%{href}>na Twitterze</a>
+
