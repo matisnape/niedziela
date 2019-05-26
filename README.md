@@ -21,11 +21,12 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 `rake scraper:run`
 
 ## TODO
-- zapisywać scrapa do pliku z timestampem
-- rake task na scrapowanie
+- ~~zapisywać scrapa do pliku z timestampem~~
+- ~~rake task na scrapowanie~~
 - usuwanie starszego pliku po zapisaniu nowszego
 - stworzenie background joba na heroku, który będzie scrapował o określonej godzinie
 - zmiana logiki pobierania świąt - powinno to iść z pliku, a nie scrapować przy kazdym wejściu na strone
+- wywołanie scrapera, jeśli nie ma zadnych plikow
 - dodać fallback file z listą stałych świąt
 
 - ~~fix na style następnej niedzieli~~
