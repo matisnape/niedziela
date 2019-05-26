@@ -1,12 +1,16 @@
 # niedziela
 Appka odpowiadająca na pytanie, czy dzisiaj sklepy są otwarte?
 
+## Stack
+Sinatra,
+Nokogiri
+
 ## Setup
 ```
 bundle
 bundle exec rackup
 ```
-Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (ustawione PL, żeby pokazywać zawsze wg czasu polskiego)
+Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (ustawione PL, żeby pokazywać zawsze wg czasu polskiego).
 
 ## Testy
 
@@ -14,6 +18,7 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 
 ## TODO
 - fix na style następnej niedzieli
+- ~~rezygnacja z zewnętrznego API na rzecz scrapera~~
 - ~~testy z Timecopem~~
 - ~~pobieranie danych o świętach z zewnętrznego API~~
 - ~~obliczanie niehandlowych niedziel (handlowe to pierwsza i ostatnia w miesiącu)~~
