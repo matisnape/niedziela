@@ -1,5 +1,5 @@
 require 'rake/testtask'
-require_relative './lib/tasks/scraper.rake'
+load 'lib/tasks/scraper.rake'
 
 Rake::TestTask.new do |t|
   t.pattern = "test/test_*.rb"
