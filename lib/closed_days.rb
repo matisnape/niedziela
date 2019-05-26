@@ -27,13 +27,13 @@ module ClosedDays
     end
   end
 
-  def holidays
-    @api ||= CalendarIndexAPI.new()
-    @api.holiday_dates
+  def state_holidays
+    @scrape ||= ScrapeHolidays.new()
+    @scrape.run!
   end
 
   def holidays_combined
-    total = additional_holidays + holidays
+    total = additional_holidays + state_holidays
     total.uniq.sort
   end
 end

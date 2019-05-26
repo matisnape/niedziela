@@ -1,7 +1,9 @@
-require './lib/holiday_api.rb'
+require './lib/scrape_holidays.rb'
 require './lib/checkdate.rb'
 
 class App < Sinatra::Base
+  # disable :show_exceptions
+
   error do
     erb :error
   end
@@ -13,7 +15,7 @@ class App < Sinatra::Base
 
   get '/holidays' do
     content_type 'application/json'
-    @api ||= ClosedDays::CalendarIndexAPI.new()
-    @api.holidays
+    @scrape ||= ClosedDays::ScrapeHolidays.new()
+    @scrape.run!.to_json
   end
 end

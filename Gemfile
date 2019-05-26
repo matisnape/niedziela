@@ -7,6 +7,7 @@ gem 'httparty'
 gem 'pry'
 gem 'rack', '>= 2.0.6'
 gem 'sassc'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'rerun'
