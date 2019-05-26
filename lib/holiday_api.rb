@@ -8,6 +8,7 @@ module ClosedDays
 
     def initialize
       @options = {
+        api_key: ENV.fetch("HOLIDAYAPI"),
         country: 'PL',
         year: Date.today.year
       }
@@ -15,7 +16,11 @@ module ClosedDays
 
     def holidays
       response = self.class.get('/holidays', query: @options)
-      response.parsed_response['holidays'].keys.to_json
+      if response["status"] == 200
+        response.parsed_response['holidays'].keys.to_json
+      else
+        response["status"]
+      end
     end
 
     def holiday_dates
