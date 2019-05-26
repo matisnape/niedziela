@@ -12,6 +12,8 @@ module ClosedDays
     def run!
       doc = Nokogiri::HTML(open(@url + @year))
       dates = parse_page(doc)
+      save_parsed_to_file(dates)
+      dates
     end
 
     def parse_page(doc)
@@ -23,12 +25,10 @@ module ClosedDays
     end
 
     def save_parsed_to_file(arr)
-      Dir.mkdir 'scraped' unless File.exist? 'scraped'
-      File.open("scraped/scraped_#{Time.now.to_i}.txt", 'w') do |file|
+      Dir.mkdir 'lib/scraped' unless File.exist? 'lib/scraped'
+      File.open("lib/scraped/saved_#{Time.now.to_i}.txt", 'w') do |file|
         file.write(arr)
       end
     end
-
-
   end
 end

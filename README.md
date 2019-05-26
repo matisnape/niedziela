@@ -16,6 +16,10 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 
 `rake test`
 
+## Scrape
+
+`rake scraper:run`
+
 ## TODO
 - zapisywać scrapa do pliku z timestampem
 - rake task na scrapowanie
