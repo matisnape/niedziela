@@ -13,6 +13,7 @@ module ClosedDays
       doc = Nokogiri::HTML(open(@url + @year))
       dates = get_dates_from(doc)
       save_parsed_to_file(dates)
+      puts "File saved in lib/scraped"
       dates
     end
 
@@ -29,7 +30,6 @@ module ClosedDays
       File.open("lib/scraped/saved_#{Time.now.to_i}.txt", 'w') do |file|
         arr.each { |element| file.puts(element) }
       end
-      puts "File saved in lib/scraped"
     end
   end
 end
