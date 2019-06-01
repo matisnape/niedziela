@@ -28,7 +28,7 @@ module ClosedDays
   end
 
   def state_holidays
-    ScrapeHolidays.new().run! if Dir['lib/scraped/*'].size == 0
+    ScrapeHolidays.new().run! if Dir['lib/scraped/*'].size <= 1
 
     file_path = Dir['lib/scraped/*'].first
 
