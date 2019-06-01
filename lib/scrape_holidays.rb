@@ -11,12 +11,12 @@ module ClosedDays
 
     def run!
       doc = Nokogiri::HTML(open(@url + @year))
-      dates = parse_page(doc)
+      dates = get_dates_from(doc)
       save_parsed_to_file(dates)
       dates
     end
 
-    def parse_page(doc)
+    def get_dates_from(doc)
       items = doc.css('.cbox table tr td:first-of-type')
       items.each_with_object([]) do |item, dates|
         date_string = item.css('a[data-date]').first.attributes["data-date"].value

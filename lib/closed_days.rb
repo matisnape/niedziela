@@ -28,8 +28,16 @@ module ClosedDays
   end
 
   def state_holidays
-    @scrape ||= ScrapeHolidays.new()
-    @scrape.run!
+    ScrapeHolidays.new().run! if Dir['lib/scraped/*'].size == 0
+
+    file_path = Dir['lib/scraped/*'].first
+
+    File.open(file_path) do |file|
+      holidays = file.readlines.map(&:chomp)
+      holidays.map do |item|
+        Date.parse(item)
+      end
+    end
   end
 
   def holidays_combined
