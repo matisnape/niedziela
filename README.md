@@ -20,6 +20,10 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 
 `rake scraper:run`
 
+`rake scraper:cleanup_directory` - czyści stare zescrapowane pliki
+
+`rake scraper:run_and_cleanup_directory` - scrapuje i czyści stare zescrapowane pliki
+
 ## TODO
 - ~~zapisywać scrapa do pliku z timestampem~~
 - ~~rake task na scrapowanie~~
@@ -30,6 +34,7 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 - dodać fallback file z listą stałych świąt
 - testy na scrapera
 - przepisanie scrapera na podejście funkcyjne
+- uzycie crona albo innego cosia do odpalania tasków raz na tydzień, a nie codziennie
 
 - ~~fix na style następnej niedzieli~~
 - ~~rezygnacja z zewnętrznego API na rzecz scrapera~~
