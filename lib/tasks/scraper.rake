@@ -12,6 +12,7 @@ namespace :scraper do
     if dir.size > 2
       dir.sort[0..-3].each do |file_path|
         File.delete(file_path) if File.exist?(file_path)
+        puts 'Deleted file: ' + file_path
       end
     end
   end

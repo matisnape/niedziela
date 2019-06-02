@@ -27,11 +27,19 @@ module ClosedDays
     def save_parsed_to_file(arr)
       return puts 'File not created, because there are no dates to save.' if arr.empty?
 
-      Dir.mkdir 'lib/scraped' unless File.exist? 'lib/scraped'
-      File.open("lib/scraped/saved_#{Time.now.to_i}.txt", 'w') do |file|
+      dir = 'lib/scraped'
+
+      if !File.exist?(dir)
+        Dir.mkdir dir
+        puts 'New directory created: ' + dir
+      end
+
+      file_path = "#{dir}/saved_#{Time.now.to_i}.txt"
+
+      File.open(file_path, 'w') do |file|
         arr.each { |element| file.puts(element) }
       end
-      puts "File saved in lib/scraped"
+      puts 'New file created: ' + file_path
     end
   end
 end
