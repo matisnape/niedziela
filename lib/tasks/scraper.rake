@@ -15,4 +15,9 @@ namespace :scraper do
       end
     end
   end
+
+  task :run_and_cleanup_directory do
+    Rake::Task['scraper:run'].invoke
+    Rake::Task['scraper:cleanup_directory'].invoke
+  end
 end
