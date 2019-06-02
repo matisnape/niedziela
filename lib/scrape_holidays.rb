@@ -29,7 +29,7 @@ module ClosedDays
 
       dir = 'lib/scraped'
 
-      if !File.exist?(dir)
+      if not File.exist?(dir)
         Dir.mkdir dir
         puts 'New directory created: ' + dir
       end
