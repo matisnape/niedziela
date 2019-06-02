@@ -30,7 +30,7 @@ module ClosedDays
   def state_holidays
     ScrapeHolidays.new().run! if Dir['lib/scraped/*'].size <= 1
 
-    file_path = Dir['lib/scraped/*'].first
+    file_path = Dir['lib/scraped/*'].sort.last
 
     File.open(file_path) do |file|
       holidays = file.readlines.map(&:chomp)
