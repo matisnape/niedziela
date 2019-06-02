@@ -10,8 +10,7 @@ namespace :scraper do
   task :cleanup_directory do
     dir = Dir['lib/scraped/*']
     if dir.size > 2
-      #TODO delete oldest files
-      dir[0..-3].each do |file_path|
+      dir.sort[0..-3].each do |file_path|
         File.delete(file_path) if File.exist?(file_path)
       end
     end
