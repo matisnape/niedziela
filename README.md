@@ -25,16 +25,17 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 `rake scraper:run_and_cleanup_directory` - scrapuje i czyści stare zescrapowane pliki
 
 ## TODO
+- upload zescrapowanych plików na S3, bo heroku ma readonly file system
+- dodać fallback file z listą stałych świąt
+- testy na scrapera
+- przepisanie scrapera na podejście funkcyjne
+- uzycie crona albo innego cosia do odpalania tasków raz na tydzień, a nie codziennie
 - ~~zapisywać scrapa do pliku z timestampem~~
 - ~~rake task na scrapowanie~~
 - ~~usuwanie starszego pliku po zapisaniu nowszego~~
 - ~~stworzenie background joba na heroku, który będzie scrapował o określonej godzinie~~
 - ~~zmiana logiki pobierania świąt - powinno to iść z pliku, a nie scrapować przy kazdym wejściu na strone~~
 - ~~wywołanie scrapera, jeśli nie ma zadnych plikow~~
-- dodać fallback file z listą stałych świąt
-- testy na scrapera
-- przepisanie scrapera na podejście funkcyjne
-- uzycie crona albo innego cosia do odpalania tasków raz na tydzień, a nie codziennie
 
 - ~~fix na style następnej niedzieli~~
 - ~~rezygnacja z zewnętrznego API na rzecz scrapera~~
