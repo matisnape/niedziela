@@ -23,11 +23,13 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 ## TODO
 - ~~zapisywać scrapa do pliku z timestampem~~
 - ~~rake task na scrapowanie~~
-- usuwanie starszego pliku po zapisaniu nowszego
-- stworzenie background joba na heroku, który będzie scrapował o określonej godzinie
-- zmiana logiki pobierania świąt - powinno to iść z pliku, a nie scrapować przy kazdym wejściu na strone
-- wywołanie scrapera, jeśli nie ma zadnych plikow
+- ~~usuwanie starszego pliku po zapisaniu nowszego~~
+- ~~stworzenie background joba na heroku, który będzie scrapował o określonej godzinie~~
+- ~~zmiana logiki pobierania świąt - powinno to iść z pliku, a nie scrapować przy kazdym wejściu na strone~~
+- ~~wywołanie scrapera, jeśli nie ma zadnych plikow~~
 - dodać fallback file z listą stałych świąt
+- testy na scrapera
+- przepisanie scrapera na podejście funkcyjne
 
 - ~~fix na style następnej niedzieli~~
 - ~~rezygnacja z zewnętrznego API na rzecz scrapera~~
