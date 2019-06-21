@@ -1,7 +1,5 @@
-require './lib/scrape_holidays.rb'
-require './lib/checkdate.rb'
-
 class App < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
   # disable :show_exceptions
 
   error do
