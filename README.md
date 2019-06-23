@@ -25,7 +25,7 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 `rake scraper:run_and_cleanup_directory` - scrapuje i czyści stare zescrapowane pliki
 
 ## TODO
-- upload zescrapowanych plików na S3, bo heroku ma readonly file system
+- ~~upload zescrapowanych plików na S3, bo heroku ma readonly file system~~
 - dodać fallback file z listą stałych świąt
 - testy na scrapera
 - przepisanie scrapera na podejście funkcyjne
