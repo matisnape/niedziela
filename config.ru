@@ -7,7 +7,7 @@ require 'sinatra/activerecord'
 require './app'
 require './lib/scrape_holidays.rb'
 require './lib/checkdate.rb'
-require './models/scrape_file'
+require './models/scraped_date'
 
 template = File.read('public/niedziela.scss')
 css = SassC::Engine.new(template, style: :compressed).render
