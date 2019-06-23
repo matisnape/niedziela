@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_21_130700) do
+ActiveRecord::Schema.define(version: 2019_06_23_174315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "scrape_files", force: :cascade do |t|
+  create_table "scraped_dates", force: :cascade do |t|
     t.string "file_name", null: false
-    t.string "content_type"
-    t.binary "file_contents"
+    t.string "dates", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["file_name"], name: "index_scrape_files_on_file_name", unique: true
+    t.index ["file_name"], name: "index_scraped_dates_on_file_name", unique: true
   end
 
 end

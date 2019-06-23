@@ -16,4 +16,6 @@ File.write('public/niedziela.css', css)
 I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
 I18n.default_locale = :pl
 
+set :database_file, 'config/database.yml'
+
 run App
