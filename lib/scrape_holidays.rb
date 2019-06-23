@@ -1,5 +1,8 @@
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
+require 'sinatra/activerecord'
+require './models/scraped_date'
 
 module ClosedDays
   class ScrapeHolidays
@@ -12,8 +15,7 @@ module ClosedDays
     def run!
       doc = Nokogiri::HTML(open(@url + @year))
       dates = get_dates_from(doc)
-      save_parsed_to_file(dates)
-      dates
+      save_parsed_to_db(dates)
     end
 
     def get_dates_from(doc)
@@ -24,22 +26,13 @@ module ClosedDays
       end
     end
 
-    def save_parsed_to_file(arr)
-      return puts 'File not created, because there are no dates to save.' if arr.empty?
+    def save_parsed_to_db(arr)
+      return puts 'Entry not created, because there are no dates to save.' if arr.empty?
 
-      dir = 'lib/scraped'
+      ScrapedDate.create(dates: arr)
 
-      if not File.exist?(dir)
-        Dir.mkdir dir
-        puts 'New directory created: ' + dir
-      end
-
-      file_path = "#{dir}/saved_#{Time.now.to_i}.txt"
-
-      File.open(file_path, 'w') do |file|
-        arr.each { |element| file.puts(element) }
-      end
-      puts 'New file created: ' + file_path
+      puts 'New entry created'
+      ScrapedDate.last.dates
     end
   end
 end

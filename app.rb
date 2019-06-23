@@ -13,7 +13,13 @@ class App < Sinatra::Base
 
   get '/holidays' do
     content_type 'application/json'
-    @scrape ||= ClosedDays::ScrapeHolidays.new()
-    @scrape.run!.to_json
+
+    if ScrapedDate.all.count == 0
+      @scrape = ClosedDays::ScrapeHolidays.new().run!
+    else
+      @scrape = ScrapedDate.last.dates
+    end
+
+    @scrape.to_json
   end
 end

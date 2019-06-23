@@ -28,15 +28,12 @@ module ClosedDays
   end
 
   def state_holidays
-    ScrapeHolidays.new().run! if Dir['lib/scraped/*'].size <= 1
+    ScrapeHolidays.new().run! if ScrapedDate.all.count <= 1
 
-    file_path = Dir['lib/scraped/*'].sort.last
+    holidays = ScrapedDate.last.dates
 
-    File.open(file_path) do |file|
-      holidays = file.readlines.map(&:chomp)
-      holidays.map do |item|
-        Date.parse(item)
-      end
+    holidays.map do |item|
+      Date.parse(item)
     end
   end
 
