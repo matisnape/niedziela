@@ -4,6 +4,7 @@ Appka odpowiadająca na pytanie, czy dzisiaj sklepy są otwarte?
 ## Stack
 Sinatra,
 Nokogiri
+Postgres
 
 ## Setup
 ```
@@ -19,10 +20,6 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 ## Scrape
 
 `rake scraper:run`
-
-`rake scraper:cleanup_directory` - czyści stare zescrapowane pliki
-
-`rake scraper:run_and_cleanup_directory` - scrapuje i czyści stare zescrapowane pliki
 
 ## TODO
 - ~~upload zescrapowanych plików na S3, bo heroku ma readonly file system~~
