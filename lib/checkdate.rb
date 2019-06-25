@@ -11,7 +11,7 @@ class CheckDate
   end
 
   def full_date
-    I18n.l(input_date)
+    I18n.l(@input_date)
   end
 
   def reason
@@ -29,7 +29,7 @@ class CheckDate
   end
 
   def today_status
-    day_status(input_date)
+    day_status(@input_date)
   end
 
   private
@@ -39,15 +39,14 @@ class CheckDate
   end
 
   def next_sunday
-    input_date - input_date.wday + 7
+    @input_date - @input_date.wday + 7
   end
 
-  def nonshop_sunday?(date = input_date)
+  def nonshop_sunday?(date = @input_date)
     date.wday == 0 && !shop_sundays(date).include?(date)
   end
 
-  def holiday?(date =  input_date)
-    holidays_combined.include?(date)
+  def holiday?(date = @input_date)
   end
 
   def day_status(date)
