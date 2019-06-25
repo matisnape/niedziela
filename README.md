@@ -22,11 +22,15 @@ Uwaga: strefa czasowa jest ogarnięta przez zmienną środowiskową na Heroku (u
 `rake scraper:run`
 
 ## TODO
-- ~~upload zescrapowanych plików na S3, bo heroku ma readonly file system~~
-- dodać fallback file z listą stałych świąt
 - testy na scrapera
 - przepisanie scrapera na podejście funkcyjne
+
+MAYBE:
 - uzycie crona albo innego cosia do odpalania tasków raz na tydzień, a nie codziennie
+
+DONE:
+- ~~Postgres do zapisywania dat~~
+- ~~upload zescrapowanych plików na S3, bo heroku ma readonly file system~~
 - ~~zapisywać scrapa do pliku z timestampem~~
 - ~~rake task na scrapowanie~~
 - ~~usuwanie starszego pliku po zapisaniu nowszego~~
