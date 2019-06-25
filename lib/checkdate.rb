@@ -8,6 +8,7 @@ class CheckDate
 
   def initialize(input_date = today)
     @input_date = input_date
+    @holidays_combined = holidays_combined
   end
 
   def full_date
@@ -47,6 +48,7 @@ class CheckDate
   end
 
   def holiday?(date = @input_date)
+    @holidays_combined.include?(date)
   end
 
   def day_status(date)
