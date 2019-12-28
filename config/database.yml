@@ -5,6 +5,13 @@ development:
   pool: 2
   username: anks
   password: password
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: niedziela
+  pool: 2
+  username: anks
+  password: password
 production:
   adapter: postgresql
   encoding: unicode

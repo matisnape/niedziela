@@ -1,6 +1,18 @@
 module ClosedDays
   def shop_sundays(date)
-    [ last_sunday_of_month(date) ] + additional_shop_sundays
+    # [ last_sunday_of_month(date) ] + additional_shop_sundays
+    [
+      '2019-12-29',
+      '2020-01-26',
+      '2020-04-05',
+      '2020-04-26',
+      '2020-06-28',
+      '2020-08-30',
+      '2020-12-13',
+      '2020-12-20'
+    ].map do |item|
+      Date.parse(item)
+    end
   end
 
   def last_sunday_of_month(date)
@@ -8,20 +20,9 @@ module ClosedDays
     last_day_of_month - last_day_of_month.wday
   end
 
-  def additional_shop_sundays
-    [
-      '2019-04-14',
-      '2019-12-15',
-      '2019-12-22',
-      '2019-12-29'
-    ].map do |item|
-      Date.parse(item)
-    end
-  end
-
   def additional_holidays
     [
-      '2018-11-12'
+
     ].map do |item|
       Date.parse(item)
     end
