@@ -1,7 +1,8 @@
+require 'dotenv/load'
 require 'pry'
 require 'sinatra'
 require 'i18n'
-require 'sassc'
+require 'sass/embedded'
 require 'sinatra/activerecord'
 
 require './app'
@@ -10,7 +11,7 @@ require './lib/checkdate.rb'
 require './models/scraped_date'
 
 template = File.read('public/niedziela.scss')
-css = SassC::Engine.new(template, style: :compressed).render
+css = Sass.compile_string(template, style: :compressed)
 File.write('public/niedziela.css', css)
 
 I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
